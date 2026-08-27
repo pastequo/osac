@@ -102,7 +102,8 @@ var _ = Describe("Bare metal instances server", func() {
 						Name: "test-baremetal-instance",
 					}.Build(),
 					Spec: publicv1.BareMetalInstanceSpec_builder{
-						CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						SshPublicKey: new(testSSHPublicKey),
 					}.Build(),
 				}.Build(),
 			}.Build())
@@ -125,7 +126,8 @@ var _ = Describe("Bare metal instances server", func() {
 				_, err := server.Create(ctx, publicv1.BareMetalInstancesCreateRequest_builder{
 					Object: publicv1.BareMetalInstance_builder{
 						Spec: publicv1.BareMetalInstanceSpec_builder{
-							CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+							CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+							SshPublicKey: new(testSSHPublicKey),
 						}.Build(),
 						Metadata: publicv1.Metadata_builder{
 							Name: fmt.Sprintf("bmi-%d", i),
@@ -147,7 +149,8 @@ var _ = Describe("Bare metal instances server", func() {
 						Name: "test-baremetal-instance",
 					}.Build(),
 					Spec: publicv1.BareMetalInstanceSpec_builder{
-						CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						SshPublicKey: new(testSSHPublicKey),
 					}.Build(),
 				}.Build(),
 			}.Build())
@@ -169,8 +172,9 @@ var _ = Describe("Bare metal instances server", func() {
 						Name: "test-baremetal-instance",
 					}.Build(),
 					Spec: publicv1.BareMetalInstanceSpec_builder{
-						CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
-						RunStrategy: new(publicv1.BareMetalInstanceRunStrategy_BARE_METAL_INSTANCE_RUN_STRATEGY_ALWAYS),
+						CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						RunStrategy:  new(publicv1.BareMetalInstanceRunStrategy_BARE_METAL_INSTANCE_RUN_STRATEGY_ALWAYS),
+						SshPublicKey: new(testSSHPublicKey),
 					}.Build(),
 				}.Build(),
 			}.Build())
@@ -218,7 +222,8 @@ var _ = Describe("Bare metal instances server", func() {
 						Name: "test-baremetal-instance",
 					}.Build(),
 					Spec: publicv1.BareMetalInstanceSpec_builder{
-						CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						SshPublicKey: new(testSSHPublicKey),
 					}.Build(),
 				}.Build(),
 			}.Build())
@@ -249,7 +254,8 @@ var _ = Describe("Bare metal instances server", func() {
 						Name: "test-baremetal-instance",
 					}.Build(),
 					Spec: publicv1.BareMetalInstanceSpec_builder{
-						CatalogItem: publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						CatalogItem:  publicv1.BareMetalInstanceCatalogItemReference_builder{Id: catalogItemID}.Build(),
+						SshPublicKey: new(testSSHPublicKey),
 					}.Build(),
 				}.Build(),
 			}.Build())
